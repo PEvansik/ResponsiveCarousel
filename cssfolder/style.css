@@ -9,17 +9,75 @@ html {
 }
 h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 .carousel-container {
-    max-width: 100px;
+    max-width: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    position: relative;
 }
 .fa-solid {
     margin: 5px;
     font-size: 2rem;
+    color: brown;
+}
+.carousel {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid red;
+    overflow-x: auto;
+}
+
+.breakfast-images {
+    height: 100%;
+    position: relative;
+}
+.images {
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
+.carousel img {
+    width: 100%;
+    height: 100%;
+}
+.name-price-card {
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    display: none;
+    transition: .3s ease ease-in-out;
+}
+.name-price-card .price {
+    display: block;
+    font-size: 1.5rem;
+    padding: 10px 0;
+}
+.name-price-card .food-star {
+    display: block;
+    font-size: 1rem;
+    padding: 10px 0;
+
+}
+.images:hover .name-price-card{
+    display: block;
+}
+.name-price-card .food-name {
+    display: block;
+    font-size: 1.3rem;
+    padding: 5px 0;
+}
+.name-price-card .place-order {
+    display: block;
+    font-size: 1.3rem;
+    padding: 5px 0;
+    text-decoration: none;
+}
+.name-price-card .place-order a {
+    text-decoration: none;
 }
