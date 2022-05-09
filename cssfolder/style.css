@@ -31,7 +31,7 @@ h1 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     margin: 0 5px;
     padding: 5px;
     position: relative;
@@ -71,18 +71,20 @@ img {
 .name-price-card {
     position: absolute;
     inset: 0;
+    width: 200px;
+    height: 280px;
     border-radius: 5px;
     padding: 5px;
     margin: 2px;
     padding: 1rem;
     text-align: center;
-    display: none;
-    transform: scale(.85);
-    transition: all .5s ease-in;
+    transform: scale(0);
+    transition: all .5s ease-in-out;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
 }
 .breakfast-images:hover .name-price-card {
-    display: block;
+    inset: 0;
+    top: 0;
     transform: scale(1);
 }
 
