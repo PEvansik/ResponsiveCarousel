@@ -35,9 +35,9 @@ h1 {
     margin: 0 5px;
     padding: 5px;
     position: relative;
-    overflow-x: auto;
+    overflow: hidden;
 }
-.carousel::-webkit-scrollbar {
+/* .carousel::-webkit-scrollbar {
     height: .5rem;
     width: 2px;
 }
@@ -50,12 +50,13 @@ h1 {
 }
 .carousel::-webkit-scrollbar-thumb:hover {
     background-color: red;
-}
+} */
 .breakfast-images {
     position: relative;
+    
 }
 img {
-    width: 200px;
+    max-width: 200px;
     height: 280px;
     object-fit: cover;
     object-position: center;
