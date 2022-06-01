@@ -4,48 +4,35 @@ let foodHolder =  document.getElementsByClassName('images');
 let prevButton = document.querySelector('.prev');
 let nextButton = document.querySelector('.next');
 
-let btn = document.getElementById('meal-class');
-
-let totalPosition = foodHolder.length;
-
-//select all the meal buttons
-let sortBtn = btn.children
-//select all the meals
+let sortBtn = document.getElementById('meal-class').children
 let meals = carousel.children
 
-// console.log(sortBtn)
-// console.log(foodHolder)
-// console.log(totalPosition)
-
+let totalPosition = foodHolder.length;
 
 prevButton.addEventListener('click', previous)
 nextButton.addEventListener('click', next)
 
-
-//loop through the meal buttons
 for(let i = 0; i < sortBtn.length; i++) {
-    //add eventlistener to each one
+
     sortBtn[i].addEventListener('click', function() {
-        //pick out the buttons and add/remove classes accordingly same class name
-        for(let j = 0; j < sortBtn.length; j++) {
-            sortBtn[j].classList.remove('current')
-        }
-        this.classList.add('current')
+        let targetData = sortBtn[i].getAttribute("data-target")
 
-        let targetData = this.getAttribute("data-target")
-        //pick each data attribute
-        for(let k = 0; k < sortBtn.length; k++) {
-            sortBtn[k].classList.remove('active');
-            sortBtn[k].classList.add('delete')
+        for(let j = 0; j < foodHolder.length; j++) {
 
-            if(sortBtn[k].getAttribute('data-items') == targetData || targetData == 'all') {
-                this.classList.add()
+            let targetItem = foodHolder[j].getAttribute("data-items")
+
+            if(targetData == targetItem || targetData == 'all') {
+                foodHolder[j].classList.add('active')
+                foodHolder[j].classList.remove('delete')
+
+            }else {
+                foodHolder[j].classList.remove('active')
+                foodHolder[j].classList.add('delete')
             }
         }
+
     })  
 }
-
-
 
 
 function previous() {
