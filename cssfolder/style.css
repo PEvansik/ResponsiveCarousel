@@ -12,14 +12,42 @@ body {
 }
 h1 {
     text-align: center;
-    font-size: rem;
+    font-size: 3rem;
 }
+.meal-class {
+    margin-bottom: 5px;
+    text-align: center;
+}
+.meal-class button {
+    font-size: 1.5rem;
+    border: none;
+    color: #ff2600b4;
+    padding: 0 2px;;
+    border-bottom: 1px solid #ff2600b4;
+    border-radius: 3px;
+}
+.breakfast:hover,
+.launch:hover,
+.dinner:hover,
+.dessert:hover,
+.shake:hover {
+    color: #000;
+    border-top: 1px solid #ff2600b4;
+    border-right: 1px solid #ff2600b4;
+    border-bottom: none;
+    border-left: 1px solid #ff2600b4;
+    background-color: #ff2600b4;
+}
+.meals {
+    text-align: center;
+}
+
 .carousel-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 80%;
     padding: 5px;
 }
 .prev, .next {
@@ -29,9 +57,8 @@ h1 {
     width: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    /*border: 1px solid red;*/
     margin: 0 5px;
     padding: 5px;
     position: relative;
@@ -51,10 +78,13 @@ h1 {
 .carousel::-webkit-scrollbar-thumb:hover {
     background-color: red;
 } */
-.breakfast-images {
+.images {
     position: relative;
-    
+    /* border: 1px solid red;   */
 }
+/* .image {
+
+} */
 img {
     max-width: 200px;
     height: 280px;
@@ -66,13 +96,13 @@ img {
     transform: scale(.95);
     transition: all .3s ease-in-out;
 }
-.breakfast-images:hover img {
+.images:hover img {
     transform: scale(1);
 }
 .name-price-card {
     position: absolute;
     inset: 0;
-    width: 200px;
+    max-width: 200px;
     height: 280px;
     border-radius: 5px;
     padding: 5px;
@@ -83,7 +113,7 @@ img {
     transition: all .5s ease-in-out;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
 }
-.breakfast-images:hover .name-price-card {
+.images:hover .name-price-card {
     inset: 0;
     top: 0;
     transform: scale(1);
@@ -118,4 +148,7 @@ img {
 .place-order a:hover {
     color: white;
     background-color: orangered;
+}
+.current {
+
 }

@@ -1,61 +1,60 @@
 
-let carousel = document.querySelector('.carousel'); //slider(slider-main)
-let foodHolder =  document.getElementsByClassName('breakfast-images');//item
+let carousel = document.getElementById('carousel');
+let foodHolder =  document.getElementsByClassName('images');
 let prevButton = document.querySelector('.prev');
 let nextButton = document.querySelector('.next');
 
-let slidePosition = 0;
+let btn = document.getElementById('meal-class');
+
 let totalPosition = foodHolder.length;
 
-prevButton.addEventListener('click', () => {
-    if(slidePosition == totalPosition - 1)
-    carousel.prepend(foodHolder[foodHolder.length - 1])
-})
+//select all the meal buttons
+let sortBtn = btn.children
+//select all the meals
+let meals = carousel.children
 
-nextButton.addEventListener('click', () => {
+// console.log(sortBtn)
+// console.log(foodHolder)
+// console.log(totalPosition)
+
+
+prevButton.addEventListener('click', previous)
+nextButton.addEventListener('click', next)
+
+
+//loop through the meal buttons
+for(let i = 0; i < sortBtn.length; i++) {
+    //add eventlistener to each one
+    sortBtn[i].addEventListener('click', function() {
+        //pick out the buttons and add/remove classes accordingly same class name
+        for(let j = 0; j < sortBtn.length; j++) {
+            sortBtn[j].classList.remove('current')
+        }
+        this.classList.add('current')
+
+        let targetData = this.getAttribute("data-target")
+        //pick each data attribute
+        for(let k = 0; k < sortBtn.length; k++) {
+            sortBtn[k].classList.remove('active');
+            sortBtn[k].classList.add('delete')
+
+            if(sortBtn[k].getAttribute('data-items') == targetData || targetData == 'all') {
+                this.classList.add()
+            }
+        }
+    })  
+}
+
+
+
+
+function previous() {
+    carousel.prepend(foodHolder[totalPosition - 1])
+}
+
+function next() {
     carousel.append(foodHolder[0])
-})
-
-
-
-
-
-
-
-//====for one at a time=======
-// let slidePosition = 0;
-// let totalSlide = foodHolder.length
-
-// prevButton.addEventListener('click', previous)
-// nextButton.addEventListener('click', next)
-
-// function previous() {
-//     if (slidePosition === totalSlide - 1) {
-//         slidePosition -- 
-//         console.log(foodHolder[slidePosition])
-//     }else if (slidePosition === 0){
-//         slidePosition = totalSlide - 1
-//         console.log(foodHolder[slidePosition])
-//     }
-// }
-
-// function next() {
-//     for(let slidePosition; slidePosition < totalSlide) {
-        
-//     }
-
-// }
-
-// function  moveToNext() {
-
-//     // foodHolder[slidePosition]
-// }
-// function moveToPrevious() {
-
-//     // foodHolder[slidePosition]
-// }
-
-
+}
 
 
 
