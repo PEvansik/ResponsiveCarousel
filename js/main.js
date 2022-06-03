@@ -8,6 +8,7 @@ let sortBtn = document.getElementById('meal-class').children
 let meals = carousel.children
 
 let totalPosition = foodHolder.length;
+console.log(totalPosition)
 
 prevButton.addEventListener('click', previous)
 nextButton.addEventListener('click', next)
@@ -21,24 +22,29 @@ for(let i = 0; i < sortBtn.length; i++) {
 
             let targetItem = foodHolder[j].getAttribute("data-items")
 
-            if(targetData == targetItem || targetData == 'all') {
+            if(targetData == 'all') {
                 foodHolder[j].classList.add('active')
                 foodHolder[j].classList.remove('delete')
-
-            }else {
+            }
+            else if (targetData == targetItem) {
+                foodHolder[j].classList.add('active')
+                foodHolder[j].classList.remove('delete')
+            }
+            else {
                 foodHolder[j].classList.remove('active')
                 foodHolder[j].classList.add('delete')
             }
+
         }
 
     })  
+    previous()
+    next()
 }
-
 
 function previous() {
     carousel.prepend(foodHolder[totalPosition - 1])
 }
-
 function next() {
     carousel.append(foodHolder[0])
 }

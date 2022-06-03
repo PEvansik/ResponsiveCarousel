@@ -149,6 +149,9 @@ img {
     color: white;
     background-color: orangered;
 }
-.current {
-
+.active {
+    display: block;
+}
+.delete {
+    display: none;
 }
