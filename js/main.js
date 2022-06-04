@@ -13,6 +13,13 @@ console.log(totalPosition)
 prevButton.addEventListener('click', previous)
 nextButton.addEventListener('click', next)
 
+function previous() {
+    carousel.prepend(foodHolder[totalPosition - 1])
+}
+function next() {
+    carousel.append(foodHolder[0])
+}
+
 for(let i = 0; i < sortBtn.length; i++) {
 
     sortBtn[i].addEventListener('click', function() {
@@ -22,14 +29,11 @@ for(let i = 0; i < sortBtn.length; i++) {
 
             let targetItem = foodHolder[j].getAttribute("data-items")
 
-            if(targetData == 'all') {
+            if(targetData == 'all' || targetData == targetItem) {
                 foodHolder[j].classList.add('active')
                 foodHolder[j].classList.remove('delete')
             }
-            else if (targetData == targetItem) {
-                foodHolder[j].classList.add('active')
-                foodHolder[j].classList.remove('delete')
-            }
+
             else {
                 foodHolder[j].classList.remove('active')
                 foodHolder[j].classList.add('delete')
@@ -38,16 +42,9 @@ for(let i = 0; i < sortBtn.length; i++) {
         }
 
     })  
-    previous()
-    next()
 }
 
-function previous() {
-    carousel.prepend(foodHolder[totalPosition - 1])
-}
-function next() {
-    carousel.append(foodHolder[0])
-}
+
 
 
 
